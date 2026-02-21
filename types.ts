@@ -12,29 +12,32 @@ export interface Task {
  * 0 is soft green, 50 is soft yellow, 100 is soft red.
  */
 export const getPriorityColor = (value: number) => {
-  // Simple interpolation between Green (#D1FAE5), Yellow (#FEF3C7), and Red (#FFE4E6)
-  // These are Tailwind's 100-weight colors for emerald, amber, and rose.
+  // Brighter Morandi Palette Interpolation
+  // Low (0): Fresh Sage (#A4D6C4) -> rgb(164, 214, 196)
+  // Mid (50): Warm Sand (#EEE0C6) -> rgb(238, 224, 198)
+  // High (100): Soft Coral (#E0A8A8) -> rgb(224, 168, 168)
   
   if (value < 50) {
-    // Green to Yellow
+    // Sage to Sand
     const ratio = value / 50;
-    const r = Math.round(209 + (254 - 209) * ratio);
-    const g = Math.round(250 + (243 - 250) * ratio);
-    const b = Math.round(229 + (199 - 229) * ratio);
+    const r = Math.round(164 + (238 - 164) * ratio);
+    const g = Math.round(214 + (224 - 214) * ratio);
+    const b = Math.round(196 + (198 - 196) * ratio);
     return `rgb(${r}, ${g}, ${b})`;
   } else {
-    // Yellow to Red
+    // Sand to Coral
     const ratio = (value - 50) / 50;
-    const r = Math.round(254 + (255 - 254) * ratio);
-    const g = Math.round(243 + (228 - 243) * ratio);
-    const b = Math.round(199 + (230 - 199) * ratio);
+    const r = Math.round(238 + (224 - 238) * ratio);
+    const g = Math.round(224 + (168 - 224) * ratio);
+    const b = Math.round(198 + (168 - 198) * ratio);
     return `rgb(${r}, ${g}, ${b})`;
   }
 };
 
 // Also return a darker version for text/borders if needed
 export const getPriorityBorderColor = (value: number) => {
-  if (value < 50) return '#10b981'; // emerald-500
-  if (value < 80) return '#f59e0b'; // amber-500
-  return '#f43f5e'; // rose-500
+  // Brighter/More Saturated Accents
+  if (value < 50) return '#6FB398'; // Brighter Sage
+  if (value < 80) return '#D4B483'; // Golden Sand
+  return '#D68585'; // Coral Red
 };

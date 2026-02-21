@@ -20,8 +20,8 @@ const Header: React.FC<HeaderProps> = ({ count, onAdd }) => {
         >
           <div className="relative flex items-center justify-center">
             {/* Minimalist thin Plus icon */}
-            <div className="absolute w-[1px] h-5 bg-slate-300 group-hover:bg-slate-900 transition-colors duration-500" />
-            <div className="absolute h-[1px] w-5 bg-slate-300 group-hover:bg-slate-900 transition-colors duration-500" />
+            <div className="absolute w-[1px] h-5 bg-slate-400 group-hover:bg-slate-900 transition-colors duration-500" />
+            <div className="absolute h-[1px] w-5 bg-slate-400 group-hover:bg-slate-900 transition-colors duration-500" />
           </div>
         </button>
       </div>

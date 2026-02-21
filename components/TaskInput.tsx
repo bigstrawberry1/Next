@@ -36,7 +36,7 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAdd, onCancel }) => {
     <form onSubmit={handleSubmit} className="space-y-12">
       <div className="space-y-8">
         <div className="space-y-2 group">
-          <label className="text-[9px] font-medium text-slate-200 uppercase tracking-[0.4em] group-focus-within:text-slate-400 transition-colors">
+          <label className="text-[9px] font-medium text-slate-400 uppercase tracking-[0.4em] group-focus-within:text-slate-500 transition-colors">
             The Goal
           </label>
           <input
@@ -45,28 +45,28 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAdd, onCancel }) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Focus on..."
-            className="w-full text-4xl font-light placeholder:text-slate-100 border-none outline-none ring-0 focus:outline-none focus:ring-0 text-slate-800 bg-transparent py-2 px-0 transition-all duration-500"
+            className="w-full text-4xl font-light placeholder:text-slate-300 border-none outline-none ring-0 focus:outline-none focus:ring-0 text-slate-800 bg-transparent py-2 px-0 transition-all duration-500"
             autoComplete="off"
           />
         </div>
         
         <div className="space-y-2 group">
-          <label className="text-[9px] font-medium text-slate-200 uppercase tracking-[0.4em] group-focus-within:text-slate-400 transition-colors">
+          <label className="text-[9px] font-medium text-slate-400 uppercase tracking-[0.4em] group-focus-within:text-slate-500 transition-colors">
             The Detail
           </label>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Add some nuance (optional)"
-            className="w-full text-base text-slate-400 placeholder:text-slate-100 border-none outline-none ring-0 focus:outline-none focus:ring-0 bg-transparent py-2 px-0 min-h-[100px] resize-none font-light leading-relaxed transition-all duration-500"
+            className="w-full text-base text-slate-500 placeholder:text-slate-300 border-none outline-none ring-0 focus:outline-none focus:ring-0 bg-transparent py-2 px-0 min-h-[100px] resize-none font-light leading-relaxed transition-all duration-500"
           />
         </div>
       </div>
 
-      <div className="space-y-8 pt-10 border-t border-slate-50">
+      <div className="space-y-8 pt-10">
         <div className="space-y-5">
           <div className="flex justify-between items-center">
-            <label className="text-[9px] font-medium text-slate-200 uppercase tracking-[0.4em]">
+            <label className="text-[9px] font-medium text-slate-400 uppercase tracking-[0.4em]">
               Intensity
             </label>
             <div 
@@ -81,7 +81,7 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAdd, onCancel }) => {
             max="100"
             value={priority}
             onChange={(e) => setPriority(parseInt(e.target.value))}
-            className="w-full h-[1px] bg-slate-100 rounded-lg appearance-none cursor-pointer accent-slate-300 hover:accent-slate-400 transition-all focus:outline-none"
+            className="w-full h-[1px] bg-slate-200 rounded-lg appearance-none cursor-pointer accent-slate-400 hover:accent-slate-500 transition-all focus:outline-none"
           />
         </div>
 
@@ -89,7 +89,7 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAdd, onCancel }) => {
           <button
             type="button"
             onClick={onCancel}
-            className="text-[10px] text-slate-300 hover:text-slate-500 transition-colors uppercase tracking-[0.4em] font-medium outline-none focus:outline-none"
+            className="text-[10px] text-slate-400 hover:text-slate-600 transition-colors uppercase tracking-[0.4em] font-medium outline-none focus:outline-none"
           >
             Go back
           </button>
